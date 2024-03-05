@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        /* layout */
+        html, body, h1, h2, h3, h4, h5, h6, p, blockquote, code, img, dl, dt, dd, ol, ul, li, fieldset, legend, caption { margin: 0; padding: 0; border: 0; }
+        div, span, article, section, header, footer, p, ul, li, fieldset, legend, label, a, nav { box-sizing: border-box;  }
+        html { height: 100%; overflow: hidden; }
+        body { min-height: 100%; height: 100%; overflow: hidden; }
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+        ol, ul { list-style: none; }
+        table { border-collapse: collapse; border-spacing: 0; }
+        img { max-width:100%; border:none; vertical-align: top;}
+        .hidden { display: none; }
+        
+        #wrap { width: 100%; height: 100%; }
+        .contents { display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;}
+        .contents h1 { font-size: 10vw; display: none;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="contents">
+            <h1>C</h1>
+            <h1>Cm</h1>
+            <h1>CM7</h1>
+            <h1>C7</h1>
+            <h1>Cm7</h1>
+
+            <h1>D</h1>
+            <h1>Dm</h1>
+            <h1>DM7</h1>
+            <h1>D7</h1>
+            <h1>Dm7</h1>
+
+            <h1>E</h1>
+            <h1>Em</h1>
+            <h1>EM7</h1>
+            <h1>E7</h1>
+            <h1>Em7</h1>
+
+            <h1>F</h1>
+            <h1>Fm</h1>
+            <h1>FM7</h1>
+            <h1>F7</h1>
+            <h1>Fm7</h1>
+
+            <h1>G</h1>
+            <h1>Gm</h1>
+            <h1>GM7</h1>
+            <h1>G7</h1>
+            <h1>Gm7</h1>
+
+            <h1>A</h1>
+            <h1>Am</h1>
+            <h1>AM7</h1>
+            <h1>A7</h1>
+            <h1>Am7</h1>
+
+            <h1>B</h1>
+            <h1>Bm</h1>
+            <h1>BM7</h1>
+            <h1>B7</h1>
+            <h1>Bm7</h1>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var headings = document.querySelectorAll('.contents h1');
+            var currentIndex = 0;
+
+            function showRandomHeading() {
+                // 현재 보여지고 있는 h1 요소를 숨깁니다.
+                headings[currentIndex].style.display = 'none';
+
+                // 새로운 랜덤 인덱스 생성
+                var randomIndex;
+                do {
+                    randomIndex = Math.floor(Math.random() * headings.length);
+                } while (randomIndex === currentIndex);
+                currentIndex = randomIndex;
+
+                // 새로운 h1 요소를 보여줍니다.
+                headings[currentIndex].style.display = 'block';
+            }
+
+            // 페이지 로드 시 초기 h1 요소 보이기
+            showRandomHeading();
+
+            // 페이지 새로고침 시 랜덤 h1 요소 보이기
+            window.addEventListener('load', showRandomHeading);
+
+            // 10초마다 랜덤 h1 요소 보이기
+            setInterval(showRandomHeading, 1000);
+    });
+    </script>
+</body>
+</html>
